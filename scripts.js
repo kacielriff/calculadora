@@ -73,6 +73,11 @@ class Calculator {
   appendNumber(number) {
     if (this.currentOperand.includes(".") && number === ".") return;
 
+    if (this.currentOperand == "" && number === ".") {
+        this.currentOperand = "0.";
+        return;
+    }
+
     this.currentOperand = `${this.currentOperand}${number.toString()}`;
   }
 
